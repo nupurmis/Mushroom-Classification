@@ -17,7 +17,6 @@ bleach==6.0.0
 blinker==1.5
 branca==0.6.0
 Brotli==1.0.9
-certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
 cffi==1.15.1
 chardet==5.1.0
 charset-normalizer==3.0.1
