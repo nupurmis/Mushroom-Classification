@@ -13,7 +13,7 @@ import pandas as pd
 app = Flask(__name__)
 #Load the model
 model = pickle.load(open('model.pkl','rb'))
-enc=pickle.load(open('encoding.pkl','rb'))
+enc = pickle.load(open('encoding.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -74,8 +74,11 @@ def predict():
     final_input=np.append(final_input,[ring])
     final_input=final_input.reshape(1,-1)
     print(final_input)
-
-    output = model.predict(final_input)[0]
+    
+    final_input = [float(x) for x in final_input[0]]
+    output = model.predict([final_input])
+    print(output)
+    
     result="Error"
     if output=='e':
         result="This mushroom is edible"
