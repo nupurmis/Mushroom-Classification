@@ -74,7 +74,7 @@ def predict():
     final_input=np.append(final_input,[ring])
     final_input=final_input.reshape(1,-1)
     print(final_input)
-    
+     
     final_input = [float(x) for x in final_input[0]]
     output = model.predict([final_input])
     print(output)
