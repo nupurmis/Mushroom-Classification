@@ -1,6 +1,6 @@
-FROM python:3.7
+FROM python:3.9-buster
+WORKDIR /usr/app
 COPY . /app
-WORKDIR /app
 RUN pip install -r requirements.txt
-EXPOSE $PORT
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "$PORT"]
+EXPOSE 5000
+CMD python app.py
