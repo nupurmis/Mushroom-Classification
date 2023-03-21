@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  
+	<title>mushroom prediction </title>
+  
+  <style>
+    .home{
+      text-align: center;
+      margin: 10px;
+    }
+    .title{
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(0, 53, 128);
+      margin-bottom: 40px;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .wrapper{
+      margin-left: 10%;
+      margin-top:5%;
+    }
+    .submit{
+      margin-top: 40px;
+      text-align: center;
+     
+    }
+    .submit input{
+      background-color: rgb(96, 208, 208);
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .link{
+        text-align: center;
+      }
+    .link :hover{
+      background-color: #dcb47d;
+      border-radius: 5px;
+      transition: 0.3s ease;
+      }
+    .link button{
+          background-color: rgb(96, 208, 208);
+          border: none;
+          padding: 5px;
+          border-radius: 5px;
+      }
+    li{
+      list-style: none;
+      }
+    
+    .navbar1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      background-color: rgb(96, 208, 208);
+      border-radius: 5px;
+      color: #fff;
+    }
+    .menu1{
+      display: flex;
+      gap: 1em;
+      font-size: 18px;
+      }
+    .menu1 li:hover {
+      background-color: #dcb47d;
+      border-radius: 5px;
+      transition: 0.3s ease;
+      }
+    .menu1 li{
+      padding: 5px 14px;
+      }
+    .navbar1 li a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body >
+  <!--<div class="navbar1 home">
+  <div class="menu1">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/predict">Predict</a></li>
+    <li><a href="/about">About</a></li>
+  </div>
+</div-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="wrapper" >
+    <div class="title">  Mushroom Classification System </div>
+    <p style="font-size: 20px"> Enter details about mushroom</details></p>
+    <form  class="form" action= "{{ url_for('predict')}}" method="POST" >
+      
+      <div class="form-inline">
+        <label  class="form col-4">Cap-shape : </label> 
+        <select class="form-control col-2" name="cap-shape">
+          <option value="b">Bell</option>
+          <option value="c">Conical</option>
+          <option value="x">Convex</option>
+          <option value="f">Flat</option>
+          <option value="k">Knobbed</option>
+          <option value="s">Sunken</option>
+        </select>
+      </div>
+      
+      <br>
+    
+      <div class="form-inline">
+        <label class="form col-4">Cap-surface : </label> 
+          <select class="form-control col-2" name="cap-surface">
+            <option value="f">Fibrous</option>
+            <option value="g">Grooves</option>
+            <option value="y">Scaly</option>
+            <option value="s">Smooth</option>
+          </select>  
+      </div>
+     
+      <br>
+
+      <div class="form-inline">
+        <label  class="form col-4">Cap-color : </label> 
+        <select class="form-control col-2" name="cap-color">
+          <option value="n">Brown</option>
+          <option value="b">Buff</option>
+          <option value="c">Cinnamon</option>
+          <option value="g">Gray</option>
+          <option value="r">Green</option>
+          <option value="p">Pink</option>
+          <option value="u">Purple</option>
+          <option value="e">Red</option>
+          <option value="w">White</option>
+          <option value="y">Yellow</option>
+        </select>
+      </div>  
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Bruises : </label>
+      <select class="form-control col-2" name="bruises">
+        <option value="t">Bruises</option>
+        <option value="f">No</option>
+      </select>
+      </div>  
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Odor : </label> 
+      <select class="form-control col-2" name="odor">
+        <option value="a">Almond</option>
+        <option value="l">Anisel</option>
+        <option value="c">Creosote</option>
+        <option value="y">Fishy</option>
+        <option value="f">Foul</option>
+        <option value="m">Musty</option>
+        <option value="p">Pungent</option>
+        <option value="s">Spicy</option>
+        <option value="n">None</option>
+      </select>
+      </div>  
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Gill-attachment : </label>
+      <select class="form-control col-2" name="gill-attachment">
+        <option value="a">Attached</option>
+        <option value="d">Descending</option>
+        <option value="f">Free</option>
+        <option value="n">Notched</option>
+      </select>
+      </div>  
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Gill-spacing : </label>
+      <select class="form-control col-2" name="gill-spacing">
+        <option value="c">Close</option>
+        <option value="w">Crowded</option>
+        <option value="d">Distant</option>
+      </select>
+      </div>
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Gill-size : </label>
+      <select class="form-control col-2" name="gill-size">
+        <option value="b">Broad</option>
+        <option value="n">Narrow</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Gill-color : </label> 
+      <select class="form-control col-2" name="gill-color">
+        <option value="k">Black</option>
+        <option value="n">Brown</option>
+        <option value="b">Buff</option>
+        <option value="h">Chocolate</option>
+        <option value="g">Gray</option>
+        <option value="r">Green</option>
+        <option value="o">Orange</option>
+        <option value="p">Pink</option>
+        <option value="u">Purple</option>
+        <option value="e">Red</option>
+        <option value="w">White</option>
+        <option value="y">Yellow</option>
+      </select>
+      </div>  
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-shape : </label>
+      <select class="form-control col-2" name="stalk-shape">
+        <option value="e">Enlarging</option>
+        <option value="t">Tapering</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-root : </label> 
+      <select class="form-control col-2" name="stalk-root">
+        <option value="b">Bulbous</option>
+        <option value="c">Club</option>
+        <option value="u">Cup</option>
+        <option value="e">Equal</option>
+        <option value="z">Rhizomorphs</option>
+        <option value="r">Rooted</option>
+        <option value="m">Missing</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-surface-above-ring : </label> 
+      <select class="form-control col-2" name="stalk-surface-above-ring">
+        <option value="f">Fibrous</option>
+        <option value="y">Scaly</option>
+        <option value="k">Silky</option>
+        <option value="s">Smooth</option>
+      </select>
+      </div>  
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-surface-below-ring : </label> 
+      <select class="form-control col-2" name="stalk-surface-below-ring">
+        <option value="f">Fibrous</option>
+        <option value="y">Scaly</option>
+        <option value="k">Silky</option>
+        <option value="s">Smooth</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-color-above-ring : </label> 
+      <select class="form-control col-2" name="stalk-color-above-ring">
+        <option value="n">Brown</option>
+        <option value="b">Buff</option>
+        <option value="c">Cinnamon</option>
+        <option value="g">Gray</option>
+        <option value="o">Orange</option>
+        <option value="p">Pink</option>
+        <option value="e">Red</option>
+        <option value="w">White</option>
+        <option value="y">Yellow</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Stalk-color-below-ring : </label> 
+      <select class="form-control col-2" name="stalk-color-below-ring">
+        <option value="n">Brown</option>
+        <option value="b">Buff</option>
+        <option value="c">Cinnamon</option>
+        <option value="g">Gray</option>
+        <option value="o">Orange</option>
+        <option value="p">Pink</option>
+        <option value="e">Red</option>
+        <option value="w">White</option>
+        <option value="y">Yellow</option>
+      </select>
+      </div>
+        
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Veil-type : </label> 
+      <select class="form-control col-2" name="veil-type">
+        <option value="p">Partial</option>
+        <option value="u">Universal</option>
+      </select>
+      </div>
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Veil-color : </label> 
+      <select class="form-control col-2" name="veil-color">
+        <option value="n">Brown</option>
+        <option value="o">Orange</option>
+        <option value="w">White</option>
+        <option value="y">Yellow</option>
+      </select>
+      </div>
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Ring-number : </label> 
+      <select class="form-control col-2" name="ring-number">
+        <option value="o">One</option>
+        <option value="t">Two</option>
+        <option value="n">None</option>
+      </select>
+      </div>
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Ring-type : </label> 
+      <select class="form-control col-2" name="ring-type">
+        <option value="c">Cobwebby</option>
+        <option value="e">Evanescent</option>
+        <option value="f">Flaring</option>
+        <option value="l">Large</option>
+        <option value="p">Pendant</option>
+        <option value="s">Sheathings</option>
+        <option value="z">Zone</option>
+        <option value="n">None</option>
+      </select>
+      </div>  
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Spore-print-color : </label> 
+      <select class="form-control col-2" name="spore-print-color">
+        <option value="k">Black</option>
+        <option value="n">Brown</option>
+        <option value="b">Buff</option>
+        <option value="h">Chocolate</option>
+        <option value="g">Green</option>
+        <option value="o">Orange</option>
+        <option value="u">Purple</option>
+        <option value="w">White</option>
+        <option value="y">Yellow</option>
+      </select>
+      </div>  
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Population : </label> 
+      <select class="form-control col-2" name="population">
+        <option value="a">Abundant</option>
+        <option value="c">Clustered</option>
+        <option value="n">Numerous</option>
+        <option value="s">Scattered</option>
+        <option value="v">Several</option>
+        <option value="y">Solitary</option>
+
+      </select>
+      </div>
+
+      <br>
+      <div class="form-inline">
+      <label  class="form col-4">Habitat : </label> 
+      <select class="form-control col-2" name="habitat">
+        <option value="g">Grasses</option>
+        <option value="l">Leaves</option>
+        <option value="m">Meadows</option>
+        <option value="p">Paths</option>
+        <option value="u">Urban</option>
+        <option value="w">Waste</option>
+        <option value="d">Woods</option>
+      </select>
+      </div>
+
+
+      
+      <div class="submit link">
+        <input type="submit" value="Predict" class="btn">
+      </div>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</div>	
+	
+{{prediction_text}}
+</body>
+</html>
