@@ -3,7 +3,7 @@
   "executionRoleArn": "arn:aws:iam::458990693644:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name":"container-mushroom"
+      "name":"container-mushroom",
       "dnsSearchDomains": null,
       "environmentFiles": null,
       "logConfiguration": null,
