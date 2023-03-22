@@ -2,7 +2,7 @@
     "taskDefinitionArn": "arn:aws:ecs:ap-south-1:458990693644:task-definition/mushroom-app:1",
     "containerDefinitions": [
         {
-            "name": "mushroom-container",
+            "name": "container-mushroom",
             "image": "458990693644.dkr.ecr.ap-south-1.amazonaws.com/mushroom:latest",
             "cpu": 0,
             "portMappings": [
