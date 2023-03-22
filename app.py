@@ -4,7 +4,7 @@ Created on Wed Feb 22 23:36:47 2023
 
 @author: Lenovo
 """
-import json
+import json 
 import pickle
 from flask import Flask, request, app, jsonify, url_for, render_template
 import numpy as np
