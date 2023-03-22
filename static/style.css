@@ -1,0 +1,66 @@
+*{
+    margin: 10;
+    padding: 5;
+}
+h1{
+    text-align: center;
+}
+body{
+    background: url(bkgnd-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-position: center;
+}
+.main .form{
+    max-width: 700px;
+    width: 100%;
+    padding: 5px 30px;
+    border-radius: 5px;
+    padding-left: 50px;
+}
+.main .form .title{
+    font-size: 20px ;
+    font-weight: 500;
+    position: relative;
+    padding-left: 10px;
+}
+.main form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input{
+    width: calc(100% / 3 - 20px);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.user-details .input select{
+    height: 25px;
+    width: 70%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    letter-spacing: 1px;
+}
+form .button{
+    height: 35px;
+    margin: 5px 0;
+    padding-left: 25%;
+}
+form .button input{
+    height: 100%;
+    width: 50%;
+    outline: none;
+    font-weight: bold;
+    background-color:rgb(73, 73, 189);
+    border-radius: 5px;
+    border: 1px solid #453f3f;
+    letter-spacing: 1px;
+}
+form .button input:hover{
+    background-color:rgb(162, 162, 180);
+}

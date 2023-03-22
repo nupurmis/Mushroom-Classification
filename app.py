@@ -10,7 +10,7 @@ from flask import Flask, request, app, jsonify, url_for, render_template
 import numpy as np
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates', static_folder='static')
 #Load the model
 model = pickle.load(open('model.pkl','rb'))
 enc = pickle.load(open('encoding.pkl','rb'))
