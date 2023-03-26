@@ -3,6 +3,7 @@
     "executionRoleArn": "arn:aws:iam::458990693644:role/ecsTaskExecutionRole",
     "containerDefinitions": [
       {
+        "name":"flask-api-conatiner",
         "dnsSearchDomains": null,
         "environmentFiles": null,
         "logConfiguration": null,
