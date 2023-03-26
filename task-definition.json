@@ -25,11 +25,11 @@
         "workingDirectory": null,
         "secrets": null,
         "dockerSecurityOptions": null,
-        "memory": 512,
+        "memory": null,
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "458990693644.dkr.ecr.ap-south-1.amazonaws.com/mushroom:latest",
+        "image": "458990693644.dkr.ecr.ap-south-1.amazonaws.com/flask-repository:latest",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -56,8 +56,8 @@
       "EXTERNAL",
       "EC2"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:458990693644:task-definition/flask-app:1",
-    "family": "flask-app",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:458990693644:task-definition/flask-task:2",
+    "family": "flask-task",
     "requiresAttributes": [
       {
         "targetId": null,
@@ -85,7 +85,7 @@
     "networkMode": null,
     "runtimePlatform": null,
     "cpu": "512",
-    "revision": 1,
+    "revision": 2,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
