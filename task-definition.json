@@ -3,20 +3,20 @@
     "taskRoleArn": "arn:aws:iam::458990693644:role/ecsTaskExecutionRole",
     "cpu": "512",
     "memory":"512",
-    "containerDefinitions": [
+    "compatibilities": [
+      "EXTERNAL",
+      "EC2"
+    ],
+    "containerDefinitions": [{
         "name":"flask-api-container",
         "image": "458990693644.dkr.ecr.ap-south-1.amazonaws.com/flask-repository:latest",
+        "essential":true,
         "portMappings": [
           {
             "hostPort": 80,
             "protocol": "tcp",
             "containerPort": 80
           }
-        ],
-        "essential":true
-    ],
-    "compatibilities": [
-      "EXTERNAL",
-      "EC2"
-    ],
+        ]
+    }]
 }
