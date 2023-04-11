@@ -10,8 +10,8 @@ import pandas as pd
 
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
-app = Flask(__name__, template_folder='Templates', static_folder='static')
-
+application = Flask(__name__, template_folder='Templates', static_folder='static')
+app = application
 ## Route for a home page
 
 @app.route('/')
@@ -66,5 +66,5 @@ def predict_data():
     return render_template('home.html',prediction_text=result)
     
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port = 80,debug=True)
+    app.run(host='0.0.0.0',port = 80)
     #app.run(debug=True)
