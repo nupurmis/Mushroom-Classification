@@ -1,4 +1,4 @@
-from setuptools import find_packages,setuptools
+from setuptools import find_packages,setup
 from typing import List
 
 HYPEN_E_DOT='-e.'
@@ -16,10 +16,10 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-    name='mushroomclassification'
-    version='0.0.1'
-    author='Nupur'
-    author_email='mishranupur2601@gmail.com'
-    packages=find_packages()
+    name='mushroomclassification',
+    version='0.0.1',
+    author='Nupur',
+    author_email='mishranupur2601@gmail.com',
+    packages=find_packages(),
     install_requires=get_requirements('requirements.txt')
 )
