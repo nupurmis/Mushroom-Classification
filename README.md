@@ -1,7 +1,7 @@
 
 # Mushroom Classification Project
 
-A brief description of what this project does and who it's for
+The main objective of this project is to help people who are not familiar with mushroom types by classifying the mushroom as edible or poisonous
 
 
 ## Demo
@@ -16,30 +16,41 @@ Project Link: http://mushroomedibility-env.eba-rzk2xmrq.ap-south-1.elasticbeanst
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+[Documentation](https://github.com/nupurmis/Mushroom-Classification/blob/main/Documents/Detailed%20Project%20Report.pdf)
 
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Programming Language:** Python
 
-**Server:** Node, Express
+**Front End:** HTML, CSS 
+
+**Back End:** Flask
+
+**Deployment:** AWS BeanStalk
+
+**Code Editor:** VS Code
+
+**Version Control:** Github
+
+
+## Python Libraries
+
+Pandas
+
+Numpy
+
+scikit-learn
+
+Flask
 
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Apache License 2.0
 
 
 ## Authors
 
 - [Nupur Mishra](https://github.com/nupurmis)
-
-
-## 🚀 About Me
-I'm a full stack developer...
-
-
-## 🛠 Skills
-Javascript, HTML, CSS...
 
