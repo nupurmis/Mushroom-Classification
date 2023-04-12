@@ -4,7 +4,7 @@ Created on Wed Feb 22 23:36:47 2023
 
 @author: Lenovo
 """
-from flask import Flask,request,app,render_template
+from flask import Flask, request, app, render_template
 import numpy as np
 import pandas as pd
 
@@ -12,11 +12,11 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 application = Flask(__name__, template_folder='Templates', static_folder='static')
 app = application
-## Route for a home page
 
+#Route for home page
 @app.route('/')
 def home():
-    return render_template('home.html') 
+    return render_template('home.html')
 
 @app.route('/predict_data',methods=['POST'])
 def predict_data():
@@ -63,8 +63,8 @@ def predict_data():
     else:
         result="This mushroom is poisonous"
 
-    return render_template('home.html',prediction_text=result)
-    
+    return render_template("home.html", prediction_text=result)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port = 80)
-    #app.run(debug=True)
+    
